@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Handler</title>
+    <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/plugin/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row wrapper">
+            <div class="col-md-12 text-center">
+                <h3>Form Input Data</h3>
+            </div>
+            <form id="input-form" method="POST" action="/post-json">
+                <div class="row wrapper-input">
+                    <div class="col-md-6">
+                        <label for="inputName" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="inputName" name="nama">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="inputEmail" name="email">
+                    </div>
+                </div>
+                <div class="col-md-12 wrapper-input">
+                    <label for="inputAlamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="inputAlamat" name="alamat">
+                </div>
+                <div class="row wrapper-input">
+                    <div class="col-md-4">
+                        <label for="inputdivisi" class="form-label">Divisi</label>
+                        <input type="text" class="form-control" id="inputdivisi" name="divisi">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputlahir" class="form-label">Tempat Lahir</label>
+                        <input type="text" class="form-control" id="inputlahir" name="tempatlahir">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputtgl" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="inputTgl" name="tgl">
+                    </div>
+                </div>
+                <div class="row wrapper-input">
+                    <div class="col-md-6">
+                        <label for="inputCita" class="form-label">Cita-cita</label>
+                        <textarea type="text" class="form-control" id="inputCita" name="cita"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputHarapan" class="form-label">Harapan</label>
+                        <textarea type="text" class="form-control" id="inputHarapan" name="harapan"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 wrapper-input">
+                    <input type="submit" value="Kirim" class="styleSub w-100" id="btnSubmit">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script>
+        btnSubmit = document.querySelector('#btnSubmit')
+        btnSubmit.addEventListener('click', function () {
+            let nama = document.querySelector('#inputName').value
+            let email = document.querySelector('#inputEmail').value
+            let alamat = document.querySelector('#inputAlamat').value
+            let divisi = document.querySelector('#inputDivisi').value
+            let lahir = document.querySelector('#inputLahir').value
+            let tgl = document.querySelector('#inputTgl').value
+            let cita = document.querySelector('#inputCita').value
+            let harapan = document.querySelector('#inputHarapan').value
+
+            fetch('/post-json', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nama: nama,
+                    email: email,
+                    alamat: alamat,
+                    divisi: divisi,
+                    lahir: lahir,
+                    tgl: tgl,
+                    cita: cita,
+                    harapan: harapan
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
