@@ -16,11 +16,15 @@
     background-color: #9A9483;
     margin-bottom: 30px;
     height: 50px;
-    padding-top: 15px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .styleSub:hover {
-    background-color: #554e3b;
+    background-color: #7c7359;
     color: #ffffff
+}
+
+.container .wrapper .resultstyle {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

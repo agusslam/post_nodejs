@@ -12,7 +12,75 @@
 </head>
 
 <body>
-    <%= data.nama %>
+    <div class="container">
+        <div class="row wrapper">
+            <div class="col-md-12 text-center">
+                <h3>GREAT !!!</h3>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Nama</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.nama %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Email</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.email %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Alamat</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.alamat %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Divisi</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.divisi %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Tempat Lahir</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.tempatlahir %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Tanggal Lahir</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.tgl %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Cita-Cita</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.cita %>
+                </div>
+            </div>
+            <div class="row resultstyle">
+                <div class="col-md-2">Harapan</div>
+                <div class="col-md-1">:</div>
+                <div class="col-md-9">
+                    <%= data.harapan %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <h4>Form Input</h4>
+    <form id="input-form" method="POST" action="/post">
+        <input type="text" name="nama">
+        <input type="submit" value="submit">
+    </form> -->
 </body>
 
 </html>
