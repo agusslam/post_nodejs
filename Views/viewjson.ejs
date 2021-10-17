@@ -34,15 +34,15 @@
                 </div>
                 <div class="row wrapper-input">
                     <div class="col-md-4">
-                        <label for="inputdivisi" class="form-label">Divisi</label>
-                        <input type="text" class="form-control" id="inputdivisi" name="divisi">
+                        <label for="inputDivisi" class="form-label">Divisi</label>
+                        <input type="text" class="form-control" id="inputDivisi" name="divisi">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputlahir" class="form-label">Tempat Lahir</label>
-                        <input type="text" class="form-control" id="inputlahir" name="tempatlahir">
+                        <label for="inputLahir" class="form-label">Tempat Lahir</label>
+                        <input type="text" class="form-control" id="inputLahir" name="tempatlahir">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputtgl" class="form-label">Tanggal Lahir</label>
+                        <label for="inputTgl" class="form-label">Tanggal Lahir</label>
                         <input type="date" class="form-control" id="inputTgl" name="tgl">
                     </div>
                 </div>
@@ -64,6 +64,8 @@
             </form>
         </div>
     </div>
+
+
     <script>
         btnSubmit = document.querySelector('#btnSubmit')
         btnSubmit.addEventListener('click', function () {
@@ -89,8 +91,16 @@
                     lahir: lahir,
                     tgl: tgl,
                     cita: cita,
-                    harapan: harapan
+                    harapan: harapan,
                 })
+            }).then(function (response) {
+                // console.log(response.json())
+                return response.json();
+            }).then(function (result) {
+                // console.log(result)
+
+            }).catch(function (error) {
+                console.log(error)
             })
         })
     </script>

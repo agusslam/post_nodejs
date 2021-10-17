@@ -1,30 +1,18 @@
 const express = require('express')
 const routes = express.Router()
 const bodyParser = require('body-parser')
+const postControl = require('../Controllers/post')
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //test POST data
-routes.get('/', (req, res) => {
-    res.render('view')
-})
-routes.post('/post', urlencodedParser, function (req, res) {
-    console.log(req.body);
-    res.render('post', { data: req.body });
-    // console.log(req.body);
-});
+routes.get('/', postControl.home)
+routes.post('/post', urlencodedParser, postControl.post)
 
 
 //test POST data with JSON
-routes.get('/json', (req, res) => {
-    res.render('viewjson')
-})
-routes.post('/post-json', urlencodedParser, function (req, res) {
-    console.log(req.body);
-    res.render('postjson', { data: req.body });
-    // console.log(req.body);
-});
-
+routes.get('/json', postControl.json)
+routes.post('/post-json', jsonParser, postControl.postjson);
 
 module.exports = routes
